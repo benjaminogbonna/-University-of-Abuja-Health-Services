@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+		<!-- REQUIRED META TAGS -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- FAVICON -->
+		<link rel="icon" type="image/png" href="{% static 'images/logo.jpg' %}">
+		<!-- TITLE -->
+        <title>{% block title %}Uniabuja Health Services | Home{% endblock %}</title>
+
+		<!-- BOOTSTRAP MIN CSS -->
+		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+		<!-- OWL THEME DEFAULT MIN CSS -->
+		<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+		<!-- OWL CAROUSEL MIN CSS -->
+		<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+		<!-- MAGNIFIC POPUP MIN CSS -->
+		<link rel="stylesheet" href="{% static 'css/magnific-popup.min.css' %}">
+		<!-- ANIMATE MIN CSS -->
+		<link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+		<!-- BOXICONS CSS -->
+		<link rel="stylesheet" href="{% static 'css/boxicons.min.css' %}">
+		<!-- FLATICON CSS -->
+		<link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+		<!-- MEANMENU MIN CSS -->
+		<link rel="stylesheet" href="{% static 'css/meanmenu.min.css' %}">
+		<!-- NICE SELECT MIN CSS -->
+		<link rel="stylesheet" href="{% static 'css/nice-select.min.css' %}">
+		<!-- ODOMETER MIN CSS-->
+		<link rel="stylesheet" href="{% static 'css/odometer.min.css' %}">
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+		<!-- RESPONSIVE CSS -->
+		<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+    </head>
+    <body>
+		<!-- START PRELOADER AREA -->
+		<div class="preloader">
+			<div class="lds-ripple">
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+		<!-- END PRELOADER AREA -->
+
+		<!-- START HEDER AREA -->
+		<header class="header-area">
+			<div class="top-header-area">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-6">
+							<ul class="heading-left-part">
+								<li>
+									<i class="bx bx-phone-call"></i>
+									<span>Call Us:</span>
+									<a href="tel:+234-812-994-4424">+234-812-994-4424</a>
+								</li>
+								<li>
+									<i class="bx bx-envelope"></i>
+									<span>Email:</span>
+									<a href="mailto:info@uofaclinic.com">info@uofaclinic.com</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="col-lg-6">
+							<ul class="heading-right-part">
+								<li>
+									<a href="#">
+										<i class="bx bxl-facebook"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="bx bxl-twitter"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="bx bxl-linkedin"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="bx bxl-instagram"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="nav-area">
+				<div class="navbar-area">
+					<div class="main-nav">
+						<nav class="navbar navbar-expand-md">
+							<div class="container">
+								{% if not status %}
+									<a class="navbar-brand" href="/">
+										<img src="{% static 'images/logo.jpg' %}" alt="Logo">
+									</a>
+								{% else %}
+									<a class="navbar-brand" href="">
+										<img src="{% static 'images/logo.jpg' %}" alt="Logo">
+									</a>
+								{% endif %}
+
+								<div class="collapse navbar-collapse mean-menu">
+									<ul class="navbar-nav m-auto">
+										{% if not status %}
+										<li class="nav-item">
+											<a href="{% url 'main:index' %}" class="nav-link">Home</a>
+										</li>
+										<li class="nav-item">
+											<a href="{% url 'main:about' %}" class="nav-link">About Us</a>
+										</li>
+
+										<li class="nav-item">
+											<a href="{% url 'main:staff' %}" class="nav-link">Meet our Staffs</a>
+										</li>
+
+										<li class="nav-item">
+											<a href="{% url 'main:contact' %}" class="nav-link">Contact</a>
+										</li>
+										<li class="nav-item">
+<!--												<a href="/register" class="nav-link">Signup</a>-->
+										</li>
+										<li class="nav-item">
+											<a href="/login" class="nav-link">Login</a>
+										</li>
+										{% endif %}
+
+										{% if status and user == "P" %}
+											<li class="nav-item">
+												<a href="{% url 'profile' user=user %}" class="nav-link">Profile</a>
+											</li>
+											<li class="nav-item">
+												<a href="{% url 'myappointment' %}" class="nav-link">Appointments</a>
+											</li>
+											<li class="nav-item">
+<!--												<a href="{% url 'patient_invoice' %}" class="nav-link">Payments</a>-->
+											</li>
+											<li class="nav-item">
+<!--												<a href="{% url 'medical_history'  %}" class="nav-link">History</a>-->
+<!--												<a href="" class="nav-link">History</a>-->
+											</li>
+											<li class="nav-item">
+												<a href="/logout" class="nav-link">Logout</a>
+											</li>
+										{% endif %}
+
+										{% if status and user == "D" %}
+											<li class="nav-item">
+												<a href="{% url 'profile' user=user %}" class="nav-link">Profile</a>
+											</li>
+
+											<li class="nav-item">
+												<a href="{% url 'docter_appointment'  %}" class="nav-link">Appointments</a>
+											</li>
+											<li class="nav-item">
+<!--												<a href="{% url 'docter_prescription'  %}" class="nav-link">Prescriptions</a>-->
+											</li>
+											<li class="nav-item">
+												<a href="/logout" class="nav-link">Logout</a>
+											</li>
+										{% endif %}
+
+										{% if status and user == "R" %}
+											<li class="nav-item">
+												<a href="{% url 'receptionist_dashboard' user=user %}" class="nav-link">Dashboard</a>
+											</li>
+											<li class="nav-item">
+												<a href="{% url 'create_appointment' user=user %}" class="nav-link">Create Appointment</a>
+											</li>
+											<li class="nav-item">
+												<a href="{% url 'create_patient'  %}" class="nav-link">Add Patient</a>
+											</li>
+											<li class="nav-item">
+												<a href="/logout" class="nav-link">Logout</a>
+											</li>
+										{% endif %}
+
+										{% if status and user == "H" %}
+											<li class="nav-item">
+												<a href="{% url 'hr_dashboard' user=user %}" class="nav-link">Dashboard</a>
+											</li>
+											<li class="nav-item">
+												<a href="{% url 'hr_accounting' user=user %}" class="nav-link">Accounting</a>
+											</li>
+											<li class="nav-item">
+												<a href="/logout" class="nav-link">Logout</a>
+											</li>
+										{% endif %}
+									</ul>
+
+									<!-- Start Other Option -->
+<!--									<div class="others-option">-->
+<!--										<div class="get-quote">-->
+<!--											<a href="appointment.html" class="default-btn">-->
+<!--												Get An Appointment-->
+<!--											</a>-->
+<!--										</div>-->
+<!--									</div>-->
+									<!-- End Other Option -->
+								</div>
+							</div>
+						</nav>
+					</div>
+
+					<!-- Menu For Mobile Device -->
+					<div class="mobile-nav">
+						{% if not status %}
+							<a href="/" class="logo">
+								<img src="{% static 'images/logo.jpg' %}" alt="Logo" width="50%">
+							</a>
+						{% else %}
+							<a href="" class="logo">
+								<img src="{% static 'images/logo.jpg' %}" alt="Logo" width="50%">
+							</a>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- END HEDER AREA -->
+
+        {% block content %}
+
+        {% endblock %}
+
+
+   <!-- START FOOTER TOP AREA -->
+		<footer class="footer-top-area pt-100 pb-70">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-6">
+						<div class="single-widget">
+							<a href="">
+								<img src="{% static 'images/logo.jpg' %}" alt="Image">
+							</a>
+
+							<p>
+								To cater for the health needs and render health services to the University Community and its environs.
+							</p>
+
+							<div class="social-area">
+								<ul>
+									<li>
+										<a href="#"><i class="bx bxl-facebook"></i></a>
+									</li>
+									<li>
+										<a href="#"><i class="bx bxl-twitter"></i></a>
+									</li>
+									<li>
+										<a href="#"><i class="bx bxl-linkedin"></i></a>
+									</li>
+									<li>
+										<a href="#"><i class="bx bxl-youtube"></i></a>
+									</li>
+									<li>
+										<a href="#"><i class="bx bxl-instagram"></i></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6">
+						<div class="single-widget">
+							<h3>Departments</h3>
+
+							<ul>
+								<li>
+									<a href="">
+										Medical Services
+									</a>
+								</li>
+								<li>
+									<a href="">
+										Pharmacy
+									</a>
+								</li>
+								<li>
+									<a href="">
+										Nursing
+									</a>
+								</li>
+								<li>
+									<a href="">
+										Health Information Management
+									</a>
+								</li>
+								<li>
+									<a href="">
+										Medical Laboratory
+									</a>
+								</li>
+								<li>
+									<a href="">
+										Environmental Health
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6">
+						<div class="single-widget open-time">
+							<h3>Opening Hours</h3>
+
+							<ul>
+								<li>
+									<span>Mon-Tue:</span>
+									<span class="right">6:00AM-10:00PM</span>
+								</li>
+								<li>
+									<span>Wed-Thu:</span>
+									<span class="right">6:00AM-10:00PM</span>
+								</li>
+								<li>
+									<span>Fri:</span>
+									<span class="right">6:00AM-04:00PM</span>
+								</li>
+								<li>
+									<span>Sun:</span>
+									<span class="right">Closed</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6">
+						<div class="single-widget contact">
+							<h3>Get In Touch</h3>
+
+							<ul>
+								<li>
+									<i class="bx bx-phone-call"></i>
+										<span>Hotline:</span>
+
+                                    <a href="tel:+234-812-994-4424">
+										+234-812-994-4424
+									</a>
+								</li>
+
+								<li>
+									<i class="bx bx-envelope"></i>
+									<span>Email:</span>
+									<a href="mailto:info@uofaclinic.com">
+										info@uofaclinic.com
+									</a>
+								</li>
+
+								<li>
+									<i class="bx bx-location-plus"></i>
+									<span>Address:</span>
+									Main Campus,Mohammed Maccido Road, Airport Rd, Abuja.
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- END FOOTER TOP AREA -->
+
+		<!-- START FOOTER BOTTOM AREA -->
+		<footer class="footer-bottom-area">
+			<div class="container">
+				<div class="copy-right">
+					<p>Copyright <i class="bx bx-copyright"></i> 2022 UHS. All rights reserved.</p>
+				</div>
+			</div>
+		</footer>
+		<!-- END FOOTER BOTTOM AREA -->
+
+		<!-- START GO TOP AREA -->
+		<div class="go-top">
+			<i class='bx bx-chevrons-up'></i>
+		</div>
+		<!-- END GO TOP AREA -->
+
+
+        <!-- JQUERY MIN JS -->
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <!-- BOOTSTRAP MIN JS -->
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        <!-- MEANMENU MIN JS -->
+		<script src="{% static 'js/meanmenu.min.js' %}"></script>
+        <!-- WOW MIN JS -->
+        <script src="{% static 'js/wow.min.js' %}"></script>
+        <!-- OWL CAROUSEL MIN JS -->
+		<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <!-- OWL MAGNIFIC POPUP MIN JS -->
+		<script src="{% static 'js/magnific-popup.min.js' %}"></script>
+        <!-- NICE SELECT MIN JS -->
+		<script src="{% static 'js/nice-select.min.js' %}"></script>
+		<!-- APPEAR MIN JS -->
+        <script src="{% static 'js/appear.min.js' %}"></script>
+		<!-- ODOMETER MIN JS -->
+		<script src="{% static 'js/odometer.min.js' %}"></script>
+		<!-- DATEPICKER MIN JS -->
+		<script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
+		<!-- FORM VALIDATOR MIN JS -->
+		<script src="{% static 'js/form-validator.min.js' %}"></script>
+		<!-- CONTACT JS -->
+		<script src="{% static 'js/contact-form-script.js' %}"></script>
+		<!-- AJAXCHIMP MIN JS -->
+		<script src="{% static 'js/ajaxchimp.min.js' %}"></script>
+        <!-- CUSTOM JS -->
+		<script src="{% static 'js/custom.js' %}"></script>
+    </body>
+</html>

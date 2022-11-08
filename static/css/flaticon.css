@@ -1,0 +1,62 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 30/06/2020 11:50
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/Flaticon.eot");
+  src: url("../fonts/Flaticon-1.eot") format("embedded-opentype"),
+       url("../fonts/Flaticon.woff2") format("woff2"),
+       url("../fonts/Flaticon.woff") format("woff"),
+       url("../fonts/Flaticon.ttf") format("truetype"),
+       url("../fonts/Flaticon.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("../fonts/Flaticon.svg") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+  font-style: normal;
+}
+
+.flaticon-right:before { content: "\f100"; }
+.flaticon-left:before { content: "\f101"; }
+.flaticon-brain:before { content: "\f102"; }
+.flaticon-wheelchair:before { content: "\f103"; }
+.flaticon-ambulance:before { content: "\f104"; }
+.flaticon-user-experience:before { content: "\f105"; }
+.flaticon-stethoscope:before { content: "\f106"; }
+.flaticon-neurology:before { content: "\f107"; }
+.flaticon-kidneys:before { content: "\f108"; }
+.flaticon-kidney:before { content: "\f109"; }
+.flaticon-heart-rate:before { content: "\f10a"; }
+.flaticon-heart:before { content: "\f10b"; }
+.flaticon-dental-care:before { content: "\f10c"; }
+.flaticon-lungs:before { content: "\f10d"; }
+.flaticon-scissors:before { content: "\f10e"; }
+.flaticon-tooth:before { content: "\f10f"; }
+.flaticon-cardiogram:before { content: "\f110"; }
+.flaticon-doctor:before { content: "\f111"; }
+.flaticon-conference:before { content: "\f112"; }
+.flaticon-personal-information:before { content: "\f113"; }
+.flaticon-rate:before { content: "\f114"; }
+.flaticon-first-aid-kit:before { content: "\f115"; }
+.flaticon-pills:before { content: "\f116"; }
+.flaticon-capsules:before { content: "\f117"; }
+.flaticon-medicine:before { content: "\f118"; }
+.flaticon-tooth-1:before { content: "\f119"; }
+.flaticon-eye:before { content: "\f11a"; }
+.flaticon-paper-plane:before { content: "\f11b"; }
+.flaticon-envelope:before { content: "\f11c"; }
+.flaticon-phone:before { content: "\f11d"; }
+.flaticon-call:before { content: "\f11e"; }
+.flaticon-call-1:before { content: "\f11f"; }
