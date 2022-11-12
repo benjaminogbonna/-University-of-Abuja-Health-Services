@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+<title>{% block title %}Uniabuja Clinic | Profile {% endblock %}</title>
+{% block content %}
+
+		<!-- START Patient dashboard AREA -->
+		<section class="checkout-area ptb-100">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12">
+						<div class="user-actions">
+							<h2>Hello, {{ user.first_name }}</h2>
+						</div>
+					</div>
+				</div>
+				<form action="" method="POST" enctype="multipart/form-data">
+					{% csrf_token %}
+					<div class="row">
+						<div class="col-lg-6 col-md-12">
+							<h3 class="title">Patient's Details</h3>
+							<p>
+								Name: {{ user.first_name }}
+							</p>
+						</div>
+
+						<div class="col-lg-6 col-md-12">
+							{% if messages %}
+							  {% for message in messages %}
+								<span class="alert {{ message.tags }} col-lg-6 col-md-12" role="alert">
+									{{ message|safe }}
+								</span>
+							  {% endfor %}
+							{% endif %}
+							<div class="billing-details">
+								<h3 class="title">Update Profile</h3>
+								<div class="row">
+									<div class="col-lg-6">
+										<div class="form-group">
+											Gender {{ profile_form.gender }}
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											Age {{ profile_form.age }}
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											Phone {{ profile_form.phone }}
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											Department {{ profile_form.department }}
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											Level {{ profile_form.level }}
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											Blood Group {{ profile_form.blood_group }}
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											Genotype {{ profile_form.genotype }}
+										</div>
+									</div>
+									<div class="col-lg-12">
+										<div class="form-group">
+											Address {{ profile_form.address }}
+										</div>
+									</div>
+									<div class="col-lg-12 col-md-12">
+										<button type="submit" class="default-btn">Update Record</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</section>
+		<!-- END Patient dashboard AREA -->
+
+{% endblock %}

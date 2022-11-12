@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+<title>{% block title %}Uniabuja Health Services | Contact{% endblock %}</title>
+{% block content %}
+		<!-- START CONTACT INFO AREA -->
+		<section class="contact-info-area pt-100 pb-70">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-sm-6">
+						<div class="single-contact-info">
+							<i class="bx bx-envelope"></i>
+							<h3>Email Us:</h3>
+							<a href="mailto:hello@example.com">info@uofaclinic.com</a>
+							<a href="mailto:info@medic.com">info@uofaclinic.com</a>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-sm-6">
+						<div class="single-contact-info">
+							<i class="bx bx-phone-call"></i>
+							<h3>Call Us:</h3>
+							<a href="tel:+123-456-789">+234-812-994-4424</a>
+							<a href="tel:+153-567-984">+234-812-994-4424</a>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-sm-6 offset-sm-3 offset-lg-0">
+						<div class="single-contact-info">
+							<i class="bx bx-location-plus"></i>
+							<h3>Abuja</h3>
+							<a href="#">Main Campus,Mohammed Maccido Road, <br/>Airport Rd, Abuja.</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- START CONTACT INFO AREA -->
+
+		<!-- START CONTACT AREA -->
+		<section class="contact-area pb-100">
+			<div class="container">
+				<div class="contact-wrap">
+					<div class="section-title">
+						<h2>Drop Us A Message For Any Query</h2>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repellendus molestiae, neque earum magnam enim, magni maiores laudantium ratione libero sapiente eum molestias</p>
+					</div>
+
+					<form method="post">
+						<div class="row">
+							<div class="col-lg-6 col-sm-6">
+								<div class="form-group">
+									<input type="text" name="name" id="name" class="form-control" required data-error="Please enter your name" placeholder="Your Name">
+									<div class="help-block with-errors"></div>
+								</div>
+							</div>
+
+							<div class="col-lg-6 col-sm-6">
+								<div class="form-group">
+									<input type="email" name="email" id="email" class="form-control" required data-error="Please enter your email" placeholder="Your Email">
+									<div class="help-block with-errors"></div>
+								</div>
+							</div>
+
+							<div class="col-lg-6 col-sm-6">
+								<div class="form-group">
+									<input type="text" name="phone_number" id="phone_number" required data-error="Please enter your number" class="form-control" placeholder="Your Phone">
+									<div class="help-block with-errors"></div>
+								</div>
+							</div>
+
+							<div class="col-lg-6 col-sm-6">
+								<div class="form-group">
+									<input type="text" name="msg_subject" id="msg_subject" class="form-control" required data-error="Please enter your subject" placeholder="Your Subject">
+									<div class="help-block with-errors"></div>
+								</div>
+							</div>
+
+							<div class="col-lg-12 col-md-12">
+								<div class="form-group">
+									<textarea name="message" class="form-control" id="message" cols="30" rows="8" required data-error="Write your message" placeholder="Your Message"></textarea>
+									<div class="help-block with-errors"></div>
+								</div>
+							</div>
+
+							<div class="col-lg-12 col-md-12">
+								<button type="submit" class="default-btn four">
+									Send Message
+								</button>
+								<div id="msgSubmit" class="h3 text-center hidden"></div>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+		<!-- END CONTACT AREA -->
+
+		<!-- START MAP AREA -->
+		<div class="map-area pb-100">
+			<div class="container">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d252175.52116772966!2d7.164745803992938!3d9.04162872140292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d9.0591815!2d7.427320399999999!4m5!1s0x104e7d25cff68203%3A0x3dae5baa2a2e6ebf!2sUniversity%20Medical%20Centre%2C%20Mohammed%20Maccido%20Rd!3m2!1d8.979504!2d7.172078699999999!5e0!3m2!1sen!2sng!4v1645458864754!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+			</div>
+		</div>
+		<!-- END MAP AREA -->
+
+{% endblock %}

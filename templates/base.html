@@ -99,100 +99,45 @@
 					<div class="main-nav">
 						<nav class="navbar navbar-expand-md">
 							<div class="container">
-								{% if not status %}
-									<a class="navbar-brand" href="/">
+								{% if request.user.is_authenticated %}
+									<a class="navbar-brand" href="{% url 'patient:profile' %}">
 										<img src="{% static 'images/logo.jpg' %}" alt="Logo">
 									</a>
 								{% else %}
-									<a class="navbar-brand" href="">
+									<a class="navbar-brand" href="{% url 'main:index' %}">
 										<img src="{% static 'images/logo.jpg' %}" alt="Logo">
 									</a>
 								{% endif %}
 
 								<div class="collapse navbar-collapse mean-menu">
 									<ul class="navbar-nav m-auto">
-										{% if not status %}
-										<li class="nav-item">
-											<a href="{% url 'main:index' %}" class="nav-link">Home</a>
-										</li>
-										<li class="nav-item">
-											<a href="{% url 'main:about' %}" class="nav-link">About Us</a>
-										</li>
-
-										<li class="nav-item">
-											<a href="{% url 'main:staff' %}" class="nav-link">Meet our Staffs</a>
-										</li>
-
-										<li class="nav-item">
-											<a href="{% url 'main:contact' %}" class="nav-link">Contact</a>
-										</li>
-										<li class="nav-item">
-<!--												<a href="/register" class="nav-link">Signup</a>-->
-										</li>
-										<li class="nav-item">
-											<a href="/login" class="nav-link">Login</a>
-										</li>
-										{% endif %}
-
-										{% if status and user == "P" %}
+										{% if request.user.is_authenticated %}
 											<li class="nav-item">
-												<a href="{% url 'profile' user=user %}" class="nav-link">Profile</a>
+												<a href="{% url 'patient:profile' %}" class="nav-link">Profile</a>
 											</li>
 											<li class="nav-item">
-												<a href="{% url 'myappointment' %}" class="nav-link">Appointments</a>
+												<a href="" class="nav-link">Appointments</a>
 											</li>
 											<li class="nav-item">
-<!--												<a href="{% url 'patient_invoice' %}" class="nav-link">Payments</a>-->
+												<a href="{% url 'patient:logout' %}" class="nav-link">Logout</a>
+											</li>
+										{% else %}
+											<li class="nav-item">
+												<a href="{% url 'main:index' %}" class="nav-link">Home</a>
 											</li>
 											<li class="nav-item">
-<!--												<a href="{% url 'medical_history'  %}" class="nav-link">History</a>-->
-<!--												<a href="" class="nav-link">History</a>-->
-											</li>
-											<li class="nav-item">
-												<a href="/logout" class="nav-link">Logout</a>
-											</li>
-										{% endif %}
-
-										{% if status and user == "D" %}
-											<li class="nav-item">
-												<a href="{% url 'profile' user=user %}" class="nav-link">Profile</a>
+												<a href="{% url 'main:about' %}" class="nav-link">About Us</a>
 											</li>
 
 											<li class="nav-item">
-												<a href="{% url 'docter_appointment'  %}" class="nav-link">Appointments</a>
+												<a href="{% url 'main:staffs' %}" class="nav-link">Meet our Staffs</a>
 											</li>
-											<li class="nav-item">
-<!--												<a href="{% url 'docter_prescription'  %}" class="nav-link">Prescriptions</a>-->
-											</li>
-											<li class="nav-item">
-												<a href="/logout" class="nav-link">Logout</a>
-											</li>
-										{% endif %}
 
-										{% if status and user == "R" %}
 											<li class="nav-item">
-												<a href="{% url 'receptionist_dashboard' user=user %}" class="nav-link">Dashboard</a>
+												<a href="{% url 'main:contact' %}" class="nav-link">Contact</a>
 											</li>
 											<li class="nav-item">
-												<a href="{% url 'create_appointment' user=user %}" class="nav-link">Create Appointment</a>
-											</li>
-											<li class="nav-item">
-												<a href="{% url 'create_patient'  %}" class="nav-link">Add Patient</a>
-											</li>
-											<li class="nav-item">
-												<a href="/logout" class="nav-link">Logout</a>
-											</li>
-										{% endif %}
-
-										{% if status and user == "H" %}
-											<li class="nav-item">
-												<a href="{% url 'hr_dashboard' user=user %}" class="nav-link">Dashboard</a>
-											</li>
-											<li class="nav-item">
-												<a href="{% url 'hr_accounting' user=user %}" class="nav-link">Accounting</a>
-											</li>
-											<li class="nav-item">
-												<a href="/logout" class="nav-link">Logout</a>
+												<a href="{% url 'patient:login' %}" class="nav-link">Patient login</a>
 											</li>
 										{% endif %}
 									</ul>
@@ -213,12 +158,12 @@
 
 					<!-- Menu For Mobile Device -->
 					<div class="mobile-nav">
-						{% if not status %}
-							<a href="/" class="logo">
+						{% if request.user.is_authenticated %}
+							<a href="{% url 'patient:profile' %}" class="logo">
 								<img src="{% static 'images/logo.jpg' %}" alt="Logo" width="50%">
 							</a>
 						{% else %}
-							<a href="" class="logo">
+							<a href="{% url 'main:index' %}" class="logo">
 								<img src="{% static 'images/logo.jpg' %}" alt="Logo" width="50%">
 							</a>
 						{% endif %}
@@ -314,20 +259,12 @@
 
 							<ul>
 								<li>
-									<span>Mon-Tue:</span>
+									<span>Mon-Fri:</span>
 									<span class="right">6:00AM-10:00PM</span>
 								</li>
 								<li>
-									<span>Wed-Thu:</span>
-									<span class="right">6:00AM-10:00PM</span>
-								</li>
-								<li>
-									<span>Fri:</span>
-									<span class="right">6:00AM-04:00PM</span>
-								</li>
-								<li>
-									<span>Sun:</span>
-									<span class="right">Closed</span>
+									<span>Sat/Sun:</span>
+									<span class="right">10:00AM-8:00PM</span>
 								</li>
 							</ul>
 						</div>
