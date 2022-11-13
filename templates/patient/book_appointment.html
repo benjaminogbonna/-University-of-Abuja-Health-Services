@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+<title>{% block title %}Uniabuja Health Services | Book Appointment {% endblock %}</title>
+{% block content %}
+
+		<!-- START LOG IN AREA -->
+		<section class="user-area-style log-in-area ptb-100"><br/>
+			<div class="container">
+				<div class="contact-form-action">
+					<div class="section-title">
+						<h2>Book your appointment</h2>
+						<p>
+							Complete the form to book an appointment with a doctor.<br/>
+							Appointment should be 6 hours before
+						</p>
+					</div>
+					<form method="post" action="">
+						{% csrf_token %}
+
+						<div class="row">
+							<div class="form-group">
+								{% bootstrap_form form %}
+							</div>
+							<div class="col-12">
+								<button class="default-btn btn-two" type="submit">
+									Book appointment
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+		<!-- END LOG IN AREA -->
+
+{% endblock %}

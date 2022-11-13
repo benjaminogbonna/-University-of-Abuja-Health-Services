@@ -112,14 +112,33 @@
 								<div class="collapse navbar-collapse mean-menu">
 									<ul class="navbar-nav m-auto">
 										{% if request.user.is_authenticated %}
+											{% if request.user.doctor %}
+												<li class="nav-item">
+													<a href="{% url 'doctor:profile' %}" class="nav-link">Profile</a>
+												</li>
+												<li class="nav-item">
+													<a href="{% url 'doctor:appointments' %}" class="nav-link">
+														My appointments
+													</a>
+												</li>
+											{% else %}
+												<li class="nav-item">
+													<a href="{% url 'patient:profile' %}" class="nav-link">Profile</a>
+												</li>
+												<li class="nav-item">
+													<a href="{% url 'patient:book_appointment' %}" class="nav-link">
+														Book Appointment
+													</a>
+												</li>
+												<li class="nav-item">
+													<a href="{% url 'patient:appointments' %}" class="nav-link">
+														My appointments
+													</a>
+												</li>
+											{% endif %}
+
 											<li class="nav-item">
-												<a href="{% url 'patient:profile' %}" class="nav-link">Profile</a>
-											</li>
-											<li class="nav-item">
-												<a href="" class="nav-link">Appointments</a>
-											</li>
-											<li class="nav-item">
-												<a href="{% url 'patient:logout' %}" class="nav-link">Logout</a>
+												<a href="{% url 'main:logout' %}" class="nav-link">Logout</a>
 											</li>
 										{% else %}
 											<li class="nav-item">
@@ -137,7 +156,7 @@
 												<a href="{% url 'main:contact' %}" class="nav-link">Contact</a>
 											</li>
 											<li class="nav-item">
-												<a href="{% url 'patient:login' %}" class="nav-link">Patient login</a>
+												<a href="{% url 'main:login' %}" class="nav-link">Login</a>
 											</li>
 										{% endif %}
 									</ul>

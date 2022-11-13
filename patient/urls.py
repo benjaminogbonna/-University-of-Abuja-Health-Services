@@ -2,17 +2,13 @@ from django.urls import path
 from django.contrib.auth import views as auth_views
 from django.urls import reverse_lazy
 from . import views
-from .forms import LoginForm
 
 app_name = 'patient'
 
 urlpatterns = [
-    path('patient/login/',
-         auth_views.LoginView.as_view(authentication_form=LoginForm,
-                                      redirect_authenticated_user=True,
-                                      template_name='patient/login.html'), name='login'),
-    path('patient/logout/', views.log_out, name='logout'),
-    path('patient/profile', views.profile, name='profile'),
+    path('patient/profile', views.patient_profile, name='profile'),
+    path('patient/book-appointment', views.book_appointment, name='book_appointment'),
+    path('patient/appointments', views.appointments, name='appointments'),
 
 
 
