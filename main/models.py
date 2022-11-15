@@ -9,3 +9,17 @@ class Receptionist(models.Model):
 
     def __str__(self):
         return f'{self.username}'
+
+
+class Contact(models.Model):
+    name = models.CharField(verbose_name='Name', max_length=50, null=False, blank=False)
+    email = models.EmailField(verbose_name='Email', max_length=50, null=False, blank=False)
+    subject = models.CharField(verbose_name='Subject', max_length=255, null=False, blank=False)
+    message = models.TextField(verbose_name='Message')
+    date_sent = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ('-date_sent',)
+
+    def __str__(self):
+        return f'Email from {self.name}'

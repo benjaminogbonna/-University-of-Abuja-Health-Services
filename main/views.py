@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.models import User
-from .forms import LoginForm
+from .forms import LoginForm, ContactForm
 from patient.models import Patient
 from doctor.models import Doctor
 
@@ -20,7 +20,18 @@ def staffs(request):
 
 
 def contact(request):
-    return render(request, 'main/contact.html')
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Message sent successfully!.")
+            return redirect('main:contact')
+        else:
+            messages.error(request, "An error occurred, please try again!")
+            return render(request, 'main/contact.html', {'form': form})
+    form = ContactForm()
+    context = {'form': form}
+    return render(request, 'main/contact.html', context)
 
 
 def user_login(request):

@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
 <title>{% block title %}Uniabuja Health Services | Contact{% endblock %}</title>
 {% block content %}
 		<!-- START CONTACT INFO AREA -->
@@ -40,55 +42,28 @@
 			<div class="container">
 				<div class="contact-wrap">
 					<div class="section-title">
-						<h2>Drop Us A Message For Any Query</h2>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repellendus molestiae, neque earum magnam enim, magni maiores laudantium ratione libero sapiente eum molestias</p>
+						<h2>Drop a message for any query</h2>
+						<center>
+							{% include "main/_message.html" %}
+						</center>
 					</div>
 
 					<form method="post">
+						{% csrf_token %}
 						<div class="row">
-							<div class="col-lg-6 col-sm-6">
+							<div class="col-lg-6 section-title">
 								<div class="form-group">
-									<input type="text" name="name" id="name" class="form-control" required data-error="Please enter your name" placeholder="Your Name">
-									<div class="help-block with-errors"></div>
+									{% bootstrap_form form %}
 								</div>
-							</div>
-
-							<div class="col-lg-6 col-sm-6">
-								<div class="form-group">
-									<input type="email" name="email" id="email" class="form-control" required data-error="Please enter your email" placeholder="Your Email">
-									<div class="help-block with-errors"></div>
+								<div class="col-12">
+									<button class="default-btn btn-two" type="submit">
+										Send Message
+									</button>
 								</div>
-							</div>
-
-							<div class="col-lg-6 col-sm-6">
-								<div class="form-group">
-									<input type="text" name="phone_number" id="phone_number" required data-error="Please enter your number" class="form-control" placeholder="Your Phone">
-									<div class="help-block with-errors"></div>
-								</div>
-							</div>
-
-							<div class="col-lg-6 col-sm-6">
-								<div class="form-group">
-									<input type="text" name="msg_subject" id="msg_subject" class="form-control" required data-error="Please enter your subject" placeholder="Your Subject">
-									<div class="help-block with-errors"></div>
-								</div>
-							</div>
-
-							<div class="col-lg-12 col-md-12">
-								<div class="form-group">
-									<textarea name="message" class="form-control" id="message" cols="30" rows="8" required data-error="Write your message" placeholder="Your Message"></textarea>
-									<div class="help-block with-errors"></div>
-								</div>
-							</div>
-
-							<div class="col-lg-12 col-md-12">
-								<button type="submit" class="default-btn four">
-									Send Message
-								</button>
-								<div id="msgSubmit" class="h3 text-center hidden"></div>
-								<div class="clearfix"></div>
 							</div>
 						</div>
+
+
 					</form>
 				</div>
 			</div>
