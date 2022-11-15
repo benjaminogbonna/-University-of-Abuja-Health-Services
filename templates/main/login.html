@@ -25,7 +25,7 @@
 					</center>
 					<form method="post" action="">
 						{% csrf_token %}
-
+						<input type="hidden" name="next" value="{{ next }}" />
 						<div class="row">
 							<div class="form-group">
 								{% bootstrap_form form %}

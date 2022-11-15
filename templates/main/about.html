@@ -26,32 +26,29 @@
 							<ul>
 								<li>
 									<i class="bx bx-check"></i>
-									Consultations Wif Specialized Pediatricians
+									General Medical Consultation
 								</li>
 								<li>
 									<i class="bx bx-check"></i>
-									A Wide Range Of Laboratory Studies
+									Drug dispensing
 								</li>
 								<li>
 									<i class="bx bx-check"></i>
-									Ultrasound Examination
+									Registration of Patients
 								</li>
 								<li>
 									<i class="bx bx-check"></i>
-									ECG, Echocardiography
+									Health Education
 								</li>
 							</ul>
 
-							<a href="department-slider.html" class="default-btn">
-								Our Departments
-							</a>
 						</div>
 					</div>
 
 					<div class="col-lg-6">
 						<div class="about-img">
 							<div class="video-wrap">
-
+								<img src="{% static 'images/bg_priority.jpg' %}" alt="image">
 							</div>
 						</div>
 					</div>
@@ -60,88 +57,19 @@
 		</section>
 		<!-- END ABOUT AREA -->
 
-		<!-- START COUNTER AREA CSS -->
-		<section class="counter-area pt-100 pb-70">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-3 col-sm-6">
-						<div class="single-counter">
-							<i class="bx bx-user-circle"></i>
-							
-							<h2>
-								<span class="odometer" data-count="540">00</span> 
-								<span class="target">+</span>
-							</h2>
-
-							<p>Expert Doctors</p>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-sm-6">
-						<div class="single-counter">
-							<i class="bx bx-check-circle"></i>
-						
-							<h2>
-								<span class="odometer" data-count="990">00</span> 
-								<span class="target">+</span>
-							</h2>
-
-							<p>Successful Story</p>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-sm-6">
-						<div class="single-counter">
-							<i class="bx bx-trophy"></i>
-							
-							<h2>
-								<span class="odometer" data-count="3500">00</span> 
-								<span class="traget">+</span>
-							</h2>
-
-							<p>Global Presence</p>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-sm-6">
-						<div class="single-counter">
-							<i class="bx bx-certification"></i>
-
-							<h2>
-								<span class="odometer" data-count="54">00</span> 
-								<span class="traget">+</span>
-							</h2>
-
-							<p>Experiences</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- END COUNTER AREA CSS -->
-
 		<!-- START WHY CHOOSE AREA -->
 		<section class="why-choose-area bg-color ptb-100">
 			<div class="container">
 				<div class="section-title">
 					<span class="top-title">Why Choose Us</span>
 					<h2>Why We Are Different</h2>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore perferendis deleniti illum necessitati voluptates ipsum, ratione dolorum veritatis minus mollitia placeat</p>
+					<p>
+						We believe in consistent excellent healthcare delivery through evidence based care,
+						research and innovations.
+					</p>
 				</div>
-			
+
 				<div class="tab choose-tab">
-					<ul class="tabs">
-						<li>
-							Certified Doctor
-						</li>
-						<li>
-							Success Treatment
-						</li>
-						<li>
-							Modern Technology
-						</li>
-					</ul>
-					
 					<div class="why-choose-wrap">
 						<div class="tab_content">
 							<div class="tabs_item">
@@ -149,39 +77,45 @@
 									<div class="col-lg-6">
 										<div class="why-choose-img bg-1">
 											<div class="video-wrap">
-												<a href="https://www.youtube.com/watch?v=TdK0jRFpWPQ" class="popup-youtube video-btn">
-													<i class="bx bx-play"></i>
-												</a>
+												<img src="{% static 'images/ward.jpg' %}" alt="image">
 											</div>
 										</div>
 									</div>
 
 									<div class="col-lg-6">
 										<div class="about-content why-choose-content">
-											<span class="top-title">Certified Doctor's</span>
+											<span class="top-title">Why choose us</span>
 											<h2>Tackle The Challenge Of Delivering Health Care</h2>
-											<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat atque quibusdam fuga natus non necessitatibus eveniet maiores nostrum esse ut voluptates sint dolores, voluptatum consequatur ad est enim fuga natus non necessitatibus.</p>
+											<p>
+												We deliver high quality evidence based comprehensive primary care in
+												divisions of medical practice. We provide health promotional and disease
+												prevention services the University community as well as to the general
+												public. We also ensure adequate referral support. We deliver health care
+												services in keeping with “Learning, Research and Community service”.
+												All these are contributing to a better distribution of health outcomes,
+												enhanced well being and quality of life of the University community.
+											</p>
 
 											<ul>
 												<li>
 													<i class="bx bx-check"></i>
-													Consultations Wif Specialized Pediatricians
+													Skilled Doctors
 												</li>
 												<li>
 													<i class="bx bx-check"></i>
-													A wide Range Of Laboratory Studies
+													Skilled Doctors
 												</li>
 												<li>
 													<i class="bx bx-check"></i>
-													Ultrasound Examination
+													Health Education
 												</li>
 												<li>
 													<i class="bx bx-check"></i>
-													ECG, Echocardiography
+													Health Education
 												</li>
 											</ul>
-											
-											<a class="default-btn" href="contact.html">
+
+											<a class="default-btn" href="{% url 'main:contact' %}">
 												Contact Us
 											</a>
 										</div>
@@ -189,95 +123,7 @@
 								</div>
 							</div>
 
-							<div class="tabs_item">
-								<div class="row">
-									<div class="col-lg-6">
-										<div class="about-content why-choose-content thard">
-											<span class="top-title">Certified Doctor's</span>
-											<h2>Tackle Teh Challenge Of Delivering Health Care</h2>
-											<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat atque quibusdam fuga natus non necessitatibus eveniet maiores nostrum esse ut voluptates sint dolores, voluptatum consequatur ad est enim fuga natus non necessitatibus.</p>
 
-											<ul>
-												<li>
-													<i class="bx bx-check"></i>
-													Consultations Wif Specialized Pediatricians
-												</li>
-												<li>
-													<i class="bx bx-check"></i>
-													A wide Range Of Laboratory Studies
-												</li>
-												<li>
-													<i class="bx bx-check"></i>
-													Ultrasound Examination
-												</li>
-												<li>
-													<i class="bx bx-check"></i>
-													ECG, Echocardiography
-												</li>
-											</ul>
-											
-											<a class="default-btn" href="about.html">
-												More Learn About
-											</a>
-										</div>
-									</div>
-
-									<div class="col-lg-6">
-										<div class="why-choose-img bg-2">
-											<div class="video-wrap">
-												<a href="https://www.youtube.com/watch?v=TdK0jRFpWPQ" class="popup-youtube video-btn">
-													<i class="bx bx-play"></i>
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="tabs_item">
-								<div class="row">
-									<div class="col-lg-6">
-										<div class="why-choose-img bg-3">
-											<div class="video-wrap">
-												<a href="https://www.youtube.com/watch?v=TdK0jRFpWPQ" class="popup-youtube video-btn">
-													<i class="bx bx-play"></i>
-												</a>
-											</div>
-										</div>
-									</div>
-
-									<div class="col-lg-6">
-										<div class="about-content why-choose-content">
-											<span class="top-title">Certified Doctor's</span>
-											<h2>Tackle Teh Challenge Of Delivering Health Care</h2>
-											<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat atque quibusdam fuga natus non necessitatibus eveniet maiores nostrum esse ut voluptates sint dolores, voluptatum consequatur ad est enim fuga natus non necessitatibus.</p>
-
-											<ul>
-												<li>
-													<i class="bx bx-check"></i>
-													Consultations Wif Specialized Pediatricians
-												</li>
-												<li>
-													<i class="bx bx-check"></i>
-													A wide Range Of Laboratory Studies
-												</li>
-												<li>
-													<i class="bx bx-check"></i>
-													Ultrasound Examination
-												</li>
-												<li>
-													<i class="bx bx-check"></i>
-													ECG, Echocardiography
-												</li>
-											</ul>
-											
-											<a class="default-btn" href="about.html">
-												More Learn About
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -289,111 +135,42 @@
 		<section class="doctor-area pt-100 pb-70">
 			<div class="container">
 				<div class="section-title">
-					<span class="top-title">Our Doctor's</span>
-					<h2>Our Expert Doctor's</h2>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore perferendis deleniti illum necessitati voluptates ipsum, ratione dolorum veritatis minus mollitia placeat</p>
+					<span class="top-title">Our Doctors</span>
+					<h2>Our Expert Doctors</h2>
+					<p>We have qualified, dedicated and competent Doctors.</p>
 				</div>
 
 				<div class="row">
 					<div class="col-lg-4 col-sm-6">
 						<div class="single-doctor">
-							<img src="assets/img/doctor/1.jpg" alt="Image">
+							<img src="{% static 'images/staffs/abdulkabir_ayanniyi1.jpg' %}" alt="Image">
 
 							<div class="doctor-content">
-								<h3>Dr. Anthony</h3>
-								<span>Surgeon, Сardiologist</span>
+								<h3>Dr. ABDULKABIR AYANNIYI</h3>
+								<span>Professor and Head</span>
 							</div>
-
-							<ul>
-							  	<li>
-									<a href="#">
-										<i class="bx bxl-facebook"></i>
-									</a>
-								</li>
-							  	<li>
-									<a href="#">
-										<i class="bx bxl-twitter"></i>
-									</a>
-								</li>
-							  	<li>
-									<a href="#">
-										<i class="bx bxl-instagram"></i>
-									</a>
-								</li>
-							  	<li>
-									<a href="#">
-										<i class="bx bxl-linkedin"></i>
-									</a>
-								</li>
-							</ul>
 						</div>
 					</div>
 
 					<div class="col-lg-4 col-sm-6">
 						<div class="single-doctor">
-							<img src="assets/img/doctor/2.jpg" alt="Image">
+							<img src="{% static 'images/staffs/dr_okereke_oriaku.jpg' %}" alt="Image">
 
 							<div class="doctor-content">
-								<h3>Dr. Anna</h3>
-								<span>Internist, General Practitioner</span>
+								<h3>Dr. OKEREKE ORIAKU OLUCHI</h3>
+								<span>Chief Medical Officer (CMO)</span>
 							</div>
-
-							<ul>
-							  	<li>
-									<a href="#">
-										<i class="bx bxl-facebook"></i>
-									</a>
-								</li>
-							  	<li>
-									<a href="#">
-										<i class="bx bxl-twitter"></i>
-									</a>
-								</li>
-							  	<li>
-									<a href="#">
-										<i class="bx bxl-instagram"></i>
-									</a>
-								</li>
-							  	<li>
-									<a href="#">
-										<i class="bx bxl-linkedin"></i>
-									</a>
-								</li>
-							</ul>
 						</div>
 					</div>
 
 					<div class="col-lg-4 col-sm-6 offset-sm-3 offset-lg-0">
 						<div class="single-doctor">
-							<img src="assets/img/doctor/3.jpg" alt="Image">
+							<img src="{% static 'images/staffs/dr_salihu_ibrahim.jpg' %}" alt="Image">
 
 							<div class="doctor-content">
-								<h3>Dr. Andrew</h3>
-								<span>Internist, Orthopedic Surgeon</span>
+								<h3>Dr. SALIHU IBRAHIM AHMED</h3>
+								<span>Assistant Chief Medical Officer (ACMO)</span>
 							</div>
-
-							<ul>
-							  	<li>
-									<a href="#">
-										<i class="bx bxl-facebook"></i>
-									</a>
-								</li>
-							  	<li>
-									<a href="#">
-										<i class="bx bxl-twitter"></i>
-									</a>
-								</li>
-							  	<li>
-									<a href="#">
-										<i class="bx bxl-instagram"></i>
-									</a>
-								</li>
-							  	<li>
-									<a href="#">
-										<i class="bx bxl-linkedin"></i>
-									</a>
-								</li>
-							</ul>
 						</div>
 					</div>
 				</div>

@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+<title>{% block title %}Uniabuja Health Services | All Posts {% endblock %}</title>
+{% block content %}
+
+<!-- START BLOG AREA -->
+<section class="blog-area bg-color ptb-100">
+	<div class="container">
+		<div class="section-title">
+			<span class="top-title">Blog</span>
+			<h2>Your Posts</h2>
+			<p>
+				{% with post_count.count as total_posts %}
+                	You have {{ total_posts }} post{{ total_posts|pluralize }}
+				{% endwith %}
+			</p>
+			<center>
+				{% include "main/_message.html" %}
+			</center>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-8 col-md-12">
+				<div class="row">
+					{% if posts %}
+						{% for post in posts %}
+							<div class="col-lg-6 col-md-6">
+						<div class="single-blog">
+							<div class="blog-content">
+								<ul>
+									<li>
+										<a href="">Dr. {{ post.author|title }}</a>
+									</li>
+									<li>
+										{{ post.created_at|date }}
+									</li>
+								</ul>
+
+								<a href="{% url 'blog:edit_post' post.slug post.id %}">
+									<h3>{{ post.title }}</h3>
+								</a>
+								<p>
+									{{ post.body|truncatechars:200 }}
+								</p>
+
+								<a href="{% url 'blog:edit_post' post.slug post.id %}" class="read-more">
+									Edit post
+								</a>
+							</div>
+						</div>
+					</div>
+						{% endfor %}
+					{% else %}
+						<p>No posts are available.</p>
+        			{% endif %}
+					{% include "blog/pagination.html" with page=posts %}
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-12">
+				<div class="blog-details-right-area blog-right-sidebar">
+					<div class="blog-widget resent-post-widget">
+						<h3 class="title">Recent Posts</h3>
+
+						<ul>
+							{% for post in latest_posts %}
+								<li>
+									<a href="{% url 'blog:edit_post' post.slug post.id %}">
+										<span>{{ post.created_at.date }} | Dr. {{ post.author|title }}</span>
+										<h3><b>{{ post.title|title }}</b></h3>
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- END BLOG AREA -->
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+<title>{% block title %}Uniabuja Health Services | {{ post.title }} {% endblock %}</title>
+{% block content %}
+
+<!-- START BLOG DETAILS AREA -->
+<section class="blog-details-area ptb-100">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8">
+				<div class="blog-details-left-area">
+					<div class="blog-details-single-post">
+						<ul>
+							<li><i class="bx bx-time"></i> {{ post.created_at.date }}</li>
+							<li>
+								<i class="bx bx-street-view"></i>
+								Dr. {{ post.author.first_name }} {{ post.author.last_name }}
+							</li>
+							<li></li>
+						</ul>
+
+						<h3>{{ post.title|title }}</h3>
+						<p>
+							{{ post.body }}
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4">
+				<div class="blog-details-right-area blog-right-sidebar">
+
+
+					<div class="blog-widget resent-post-widget">
+						<h3 class="title">Recent Posts</h3>
+
+						<ul>
+							{% for post in latest_posts %}
+								<li>
+									<a href="{{ post.get_absolute_url }}">
+										<span>{{ post.created_at.date }} | Dr. {{ post.author|title }}</span>
+										<h3><b>{{ post.title|title }}</b></h3>
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- END BLOG DETAILS AREA -->
+
+{% endblock %}

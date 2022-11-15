@@ -1,0 +1,16 @@
+<div class="col-lg-12 col-md-12">
+    <div class="pagination-area text-center">
+        {% if page.has_previous %}
+            <a href="?page={{ page.previous_page_number }}" class="prev page-numbers">
+                <i class="bx bx-chevrons-left"></i>
+            </a>
+        {% endif %}
+        {{ page.number }} of {{ page.paginator.num_pages }}
+
+        {% if page.has_next %}
+            <a href="?page={{ page.next_page_number }}" class="next page-numbers">
+                <i class="bx bx-chevrons-right"></i>
+            </a>
+        {% endif %}
+    </div>
+</div>

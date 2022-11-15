@@ -1,0 +1,18 @@
+<div class="col-lg-12">
+    {% if messages %}
+      {% for message in messages %}
+        <span class="alert {{ message.tags }} col-lg-6 " role="alert">
+            {{ message|safe }}
+        </span>
+      {% endfor %}
+    {% endif %}
+</div>
+
+<script>
+setTimeout(() => {
+    const alerts = document.querySelectorAll(".alert");
+    alerts.forEach(alert => {
+        alert.style.display = 'none';
+    });
+}, 5000);
+</script>

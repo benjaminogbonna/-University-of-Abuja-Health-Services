@@ -90,7 +90,7 @@
 										<i class="flaticon-doctor"></i>
 										<h3>Skilled Doctors</h3>
 										<p>We have qualified, dedicated and competent Doctors.</p>
-										<a href="/staffs" class="read-more">
+										<a href="{% url 'main:staffs' %}" class="read-more">
 											Read More
 										</a>
 									</div>
@@ -103,7 +103,7 @@
 										<p>
 											We give the best healthcare service within the country and beyond.
 										</p>
-										<a href="/about" class="read-more">
+										<a href="{% url 'main:about' %}" class="read-more">
 											Read More
 										</a>
 									</div>
@@ -116,7 +116,7 @@
 										<p>
 											We believe in consistent excellent healthcare delivery through evidence based care, research and innovations.
 										</p>
-										<a href="" class="read-more">
+										<a href="{% url 'main:about' %}" class="read-more">
 											Read More
 										</a>
 									</div>
@@ -127,7 +127,7 @@
 										<i class="flaticon-first-aid-kit"></i>
 										<h3>Latest Equipment</h3>
 										<p>We hope to upgrade to higher healthcare delivery provider as resources are available.</p>
-										<a href="/about" class="read-more">
+										<a href="{% url 'main:about' %}" class="read-more">
 											Read More
 										</a>
 									</div>
@@ -239,19 +239,6 @@
 							</p>
 						</div>
 					</div>
-
-					<div class="col-lg-4 col-sm-6">
-						<div class="single-services">
-							<i class="flaticon-eye"></i>
-							<h3>Eye Care</h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis odit, unde fugiat autem earum luptatem sequuntur.</p>
-
-							<a href="department-details.html" class="read-more">
-								Read More
-							</a>
-						</div>
-					</div>
-
 					<div class="col-lg-4 col-sm-6">
 						<div class="single-services">
 							<i class="flaticon-personal-information"></i>
@@ -267,30 +254,6 @@
 								<span class="bx bx-check"></span>Documentation of patients' records
 
 							</p>
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-sm-6">
-						<div class="single-services">
-							<i class="flaticon-dental-care"></i>
-							<h3>Dental Care</h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis odit, unde fugiat autem earum luptatem sequuntur.</p>
-
-							<a href="department-details.html" class="read-more">
-								Read More
-							</a>
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-sm-6">
-						<div class="single-services">
-							<i class="flaticon-lungs"></i>
-							<h3>Pulmonary</h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis odit, unde fugiat autem earum luptatem sequuntur.</p>
-
-							<a href="department-details.html" class="read-more">
-								Read More
-							</a>
 						</div>
 					</div>
 				</div>
@@ -313,103 +276,34 @@
 				<div class="row">
 					<div class="col-lg-4 col-sm-6">
 						<div class="single-doctor">
-							<img src="assets/img/doctor/1.jpg" alt="Image">
+							<img src="{% static 'images/staffs/abdulkabir_ayanniyi1.jpg' %}" alt="Image">
 
 							<div class="doctor-content">
-								<h3>Dr. Anthony</h3>
-								<span>Surgeon, Сardiologist</span>
+								<h3>Dr. ABDULKABIR AYANNIYI</h3>
+								<span>Professor and Head</span>
 							</div>
-
-							<ul>
-							  	<li>
-									<a href="#">
-										<i class="bx bxl-facebook"></i>
-									</a>
-								</li>
-							  	<li>
-									<a href="#">
-										<i class="bx bxl-twitter"></i>
-									</a>
-								</li>
-							  	<li>
-									<a href="#">
-										<i class="bx bxl-instagram"></i>
-									</a>
-								</li>
-							  	<li>
-									<a href="#">
-										<i class="bx bxl-linkedin"></i>
-									</a>
-								</li>
-							</ul>
 						</div>
 					</div>
 
 					<div class="col-lg-4 col-sm-6">
 						<div class="single-doctor">
-							<img src="assets/img/doctor/2.jpg" alt="Image">
+							<img src="{% static 'images/staffs/dr_okereke_oriaku.jpg' %}" alt="Image">
 
 							<div class="doctor-content">
-								<h3>Dr. Anna</h3>
-								<span>Internist, General Practitioner</span>
+								<h3>Dr. OKEREKE ORIAKU OLUCHI</h3>
+								<span>Chief Medical Officer (CMO)</span>
 							</div>
-
-							<ul>
-							  	<li>
-									<a href="#">
-										<i class="bx bxl-facebook"></i>
-									</a>
-								</li>
-							  	<li>
-									<a href="#">
-										<i class="bx bxl-twitter"></i>
-									</a>
-								</li>
-							  	<li>
-									<a href="#">
-										<i class="bx bxl-instagram"></i>
-									</a>
-								</li>
-							  	<li>
-									<a href="#">
-										<i class="bx bxl-linkedin"></i>
-									</a>
-								</li>
-							</ul>
 						</div>
 					</div>
 
 					<div class="col-lg-4 col-sm-6 offset-sm-3 offset-lg-0">
 						<div class="single-doctor">
-							<img src="assets/img/doctor/3.jpg" alt="Image">
+							<img src="{% static 'images/staffs/dr_salihu_ibrahim.jpg' %}" alt="Image">
 
 							<div class="doctor-content">
-								<h3>Dr. Andrew</h3>
-								<span>Internist, Orthopedic Surgeon</span>
+								<h3>Dr. SALIHU IBRAHIM AHMED</h3>
+								<span>Assistant Chief Medical Officer (ACMO)</span>
 							</div>
-
-							<ul>
-							  	<li>
-									<a href="#">
-										<i class="bx bxl-facebook"></i>
-									</a>
-								</li>
-							  	<li>
-									<a href="#">
-										<i class="bx bxl-twitter"></i>
-									</a>
-								</li>
-							  	<li>
-									<a href="#">
-										<i class="bx bxl-instagram"></i>
-									</a>
-								</li>
-							  	<li>
-									<a href="#">
-										<i class="bx bxl-linkedin"></i>
-									</a>
-								</li>
-							</ul>
 						</div>
 					</div>
 				</div>
@@ -430,7 +324,7 @@
                 <div class="row align-items-center">
 					<div class="col-lg-6">
                         <div class="faq-image">
-                            <img src="assets/img/faq-img.jpg" alt="image">
+                            <img src="{% static 'images/director_office.jpg' %}" alt="image">
                         </div>
 					</div>
 
@@ -499,103 +393,6 @@
         </section>
 		<!-- END FAQ AREA -->
 
-		<!-- START APPOINTMENT AREA -->
-		<section class="appointment-area ptb-100">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="appointment-here-form">
-							<span class="top-title">Make An Appointment</span>
-							<h2>We Are Here For You</h2>
-
-							<form>
-								<div class="row">
-									<div class="col-lg-6 col-sm-6">
-										<div class="form-group">
-											<input type="text" class="form-control" id="Name" placeholder="Enter Your Name">
-											<i class="bx bx-user"></i>
-										</div>
-									</div>
-
-									<div class="col-lg-6 col-sm-6">
-										<div class="form-group">
-											<input type="text" class="form-control" id="Email" placeholder="Enter Your Email">
-											<i class="bx bx-user"></i>
-										</div>
-									</div>
-
-									<div class="col-lg-6 col-sm-6">
-										<div class="form-group">
-											<input type="text" class="form-control" id="Phone" placeholder="Enter Your Phone">
-											<i class="bx bx-mobile-alt"></i>
-										</div>
-									</div>
-
-									<div class="col-lg-6 col-sm-6">
-										<div class="form-group">
-											<select>
-												<option value="">Select Service</option>
-												<option value="">Surgery & Radiology</option>
-												<option value="">Children Care</option>
-												<option value="">Orthopedics</option>
-												<option value="">Nuclear Magnetic</option>
-												<option value="">Eye Treatment</option>
-												<option value="">X-Ray</option>
-											</select>
-											<i class="bx bx-heart"></i>
-										</div>
-									</div>
-
-									<div class="col-lg-6 col-sm-6">
-										<div class="form-group">
-											<div class="input-group date" id="datetimepicker2">
-												<input type="text" class="form-control" placeholder="Date">
-												<span class="input-group-addon">
-												</span>
-											</div>
-											<i class="bx bx-calendar"></i>
-										</div>
-									</div>
-
-									<div class="col-lg-6 col-sm-6">
-										<div class="form-group">
-											<select>
-												<option value="">Seclect Time</option>
-												<option value="2">09.00 AM To 10.00 AM</option>
-												<option value="0">10.00 AM To 11.00 AM</option>
-												<option value="3">11.00 AM To 12.00 PM</option>
-												<option value="4">12.00 PM To 01.00 PM</option>
-												<option value="5">01.00 PM To 03.00 PM</option>
-												<option value="6">04.00 PM To 06.00 PM</option>
-												<option value="7">07.00 PM To 10.00 PM</option>
-												<option value="8">10.00 PM To 11.00 PM</option>
-											</select>
-											<i class="bx bx-time"></i>
-										</div>
-									</div>
-
-									<div class="col-lg-12">
-										<div class="form-group">
-											<textarea name="message" class="form-control" id="Message" cols="30" rows="8" placeholder="Your Message"></textarea>
-											<i class="flaticon-edit"></i>
-										</div>
-									</div>
-
-									<div class="col-12">
-										<button type="submit" class="default-btn">Send Request</button>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-
-					<div class="col-lg-6">
-						<div class="appointment-img"></div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- END APPOINTMENT AREA -->
 
 
 

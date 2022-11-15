@@ -1,10 +1,8 @@
-from django.shortcuts import render, redirect, HttpResponseRedirect, get_object_or_404
-from django.contrib.auth import logout
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.views.decorators.cache import cache_control
 from django.contrib.auth.decorators import login_required
 from .forms import ProfileEditForm, AppointmentForm
-from .models import Appointment
 
 
 # a view for users to edith their profile

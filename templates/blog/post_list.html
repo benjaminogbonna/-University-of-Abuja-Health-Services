@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+<title>{% block title %}Uniabuja Health Services | Blog {% endblock %}</title>
+{% block content %}
+
+<!-- START BLOG AREA -->
+<section class="blog-area bg-color ptb-100">
+	<div class="container">
+		<div class="section-title">
+			<span class="top-title">Blog</span>
+			<h2>Our Latest Posts</h2>
+			<p>Get health tips right from our doctors</p>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-8 col-md-12">
+				<div class="row">
+					{% if posts %}
+						{% for post in posts %}
+							<div class="col-lg-6 col-md-6">
+						<div class="single-blog">
+							<div class="blog-content">
+								<ul>
+									<li>
+										<a href="{{ post.get_absolute_url }}">Dr. {{ post.author|title }}</a>
+									</li>
+									<li>
+										{{ post.created_at|date }}
+									</li>
+								</ul>
+
+								<a href="{{ post.get_absolute_url }}">
+									<h3>{{ post.title }}</h3>
+								</a>
+								<p>
+									{{ post.body|truncatechars:200 }}
+								</p>
+
+								<a href="{{ post.get_absolute_url }}" class="read-more">
+									Read More
+								</a>
+							</div>
+						</div>
+					</div>
+						{% endfor %}
+					{% else %}
+						<p>No posts are available.</p>
+        			{% endif %}
+					{% include "blog/pagination.html" with page=posts %}
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-12">
+				<div class="blog-details-right-area blog-right-sidebar">
+					<div class="blog-widget resent-post-widget">
+						<h3 class="title">Recent Posts</h3>
+
+						<ul>
+							{% for post in latest_posts %}
+								<li>
+									<a href="{{ post.get_absolute_url }}">
+										<span>{{ post.created_at.date }} | Dr. {{ post.author|title }}</span>
+										<h3><b>{{ post.title|title }}</b></h3>
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- END BLOG AREA -->
+
+{% endblock %}

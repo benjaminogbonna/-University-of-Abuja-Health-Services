@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+<title>{% block title %}Uniabuja Health Services | Add Post {% endblock %}</title>
+{% block content %}
+
+<!-- START LOG IN AREA -->
+<section class="user-area-style log-in-area ptb-100"><br/>
+	<div class="container">
+		<div class="contact-form-action">
+			<div class="section-title">
+				<h2>Blog post</h2>
+				<p>
+					Write your post.
+				</p>
+				<center>
+					{% include "main/_message.html" %}
+				</center>
+			</div>
+			<form method="post" action="">
+				{% csrf_token %}
+
+				<div class="row">
+					<div class="form-group">
+						{% bootstrap_form form %}
+					</div>
+					<div class="col-12">
+						<button class="default-btn btn-two" type="submit">
+							Publish post
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+<!-- END LOG IN AREA -->
+
+{% endblock %}

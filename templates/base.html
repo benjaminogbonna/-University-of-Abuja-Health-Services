@@ -121,6 +121,16 @@
 														My appointments
 													</a>
 												</li>
+												<li class="nav-item">
+													<a href="{% url 'blog:author_post_list' %}" class="nav-link">
+														My posts
+													</a>
+												</li>
+												<li class="nav-item">
+													<a href="{% url 'blog:add_post' %}" class="nav-link">
+														Add post
+													</a>
+												</li>
 											{% else %}
 												<li class="nav-item">
 													<a href="{% url 'patient:profile' %}" class="nav-link">Profile</a>
@@ -136,7 +146,9 @@
 													</a>
 												</li>
 											{% endif %}
-
+											<li class="nav-item">
+												<a href="{% url 'blog:post_list' %}" class="nav-link">Blog</a>
+											</li>
 											<li class="nav-item">
 												<a href="{% url 'main:logout' %}" class="nav-link">Logout</a>
 											</li>
@@ -145,11 +157,15 @@
 												<a href="{% url 'main:index' %}" class="nav-link">Home</a>
 											</li>
 											<li class="nav-item">
-												<a href="{% url 'main:about' %}" class="nav-link">About Us</a>
+												<a href="{% url 'main:about' %}" class="nav-link">About us</a>
 											</li>
 
 											<li class="nav-item">
-												<a href="{% url 'main:staffs' %}" class="nav-link">Meet our Staffs</a>
+												<a href="{% url 'main:staffs' %}" class="nav-link">Meet our staffs</a>
+											</li>
+
+											<li class="nav-item">
+												<a href="{% url 'blog:post_list' %}" class="nav-link">Blog</a>
 											</li>
 
 											<li class="nav-item">
@@ -235,7 +251,7 @@
 
 					<div class="col-lg-3 col-md-6">
 						<div class="single-widget">
-							<h3>Departments</h3>
+							<h3>Services</h3>
 
 							<ul>
 								<li>
@@ -248,11 +264,7 @@
 										Pharmacy
 									</a>
 								</li>
-								<li>
-									<a href="">
-										Nursing
-									</a>
-								</li>
+
 								<li>
 									<a href="">
 										Health Information Management
@@ -260,12 +272,7 @@
 								</li>
 								<li>
 									<a href="">
-										Medical Laboratory
-									</a>
-								</li>
-								<li>
-									<a href="">
-										Environmental Health
+										Health awareness
 									</a>
 								</li>
 							</ul>
