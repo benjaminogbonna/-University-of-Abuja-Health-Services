@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+<title>{% block title %}Uniabuja Health Services | Delete Post {% endblock %}</title>
+{% block content %}
+
+<!-- START LOG IN AREA -->
+<section class="user-area-style log-in-area ptb-100"><br/>
+	<div class="container">
+		<div class="contact-form-action">
+			<div class="section-title">
+				<h2>Delete post</h2>
+				<p>
+					Kindly note that this action can not be undone.
+				</p>
+				<center>
+					{% include "main/_message.html" %}
+				</center>
+			</div>
+			<div class="row">
+                <div class="col-lg-6">
+                    <a href="{% url 'blog:confirm_delete_post' post.slug post.id %}"
+                       class="default-btn btn-two" style="background-color:#C00000">
+                        Yes, delete post!
+                    </a>
+                </div><br/><br/>
+                <div class="col-lg-6">
+                  <a href="{% url 'blog:edit_post' post.slug post.id %}" class="default-btn btn-two"><b>No, take me back!</b></a>
+                </div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- END LOG IN AREA -->
+
+{% endblock %}

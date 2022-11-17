@@ -53,7 +53,7 @@ def add_post(request):
                 post.slug = slugify(post.title)
                 post.save()
                 messages.success(request, 'post published successfully!')
-                return redirect('blog:auth_post_list')
+                return redirect('blog:author_post_list')
             else:
                 messages.error(request, "An error occurred, please try again!")
         else:
@@ -109,7 +109,7 @@ def edit_post(request, slug, id):
                     post.author = request.user
                     post.slug = slugify(post.title)
                     post.save()
-                    messages.success(request, 'post edited successfully!')
+                    messages.success(request, 'post updated successfully!')
                     return redirect('blog:author_post_list')
             else:
                 form = PostForm(instance=post)
@@ -120,5 +120,36 @@ def edit_post(request, slug, id):
             'form': form,
         }
         return render(request, 'blog/edit_post.html', context=context)
+    else:
+        return redirect('main:index')
+
+
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
+@login_required
+def delete_post(request, slug, id):
+    post = get_object_or_404(Post, slug=slug, id=id)
+    if request.user.is_staff:
+        if request.user == post.author:
+            context = {
+                'post': post,
+            }
+            return render(request, 'blog/delete_post.html', context)
+        else:
+            return redirect('blog:author_post_list')
+    else:
+        return redirect('main:index')
+
+
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
+@login_required
+def confirm_delete_post(request, slug, id):
+    post = get_object_or_404(Post, slug=slug, id=id)
+    if request.user.is_staff:
+        if request.user == post.author:
+            post.delete()
+            messages.success(request, 'Post deleted successfully!')
+            return redirect('blog:author_post_list')
+        else:
+            return redirect('blog:author_post_list')
     else:
         return redirect('main:index')

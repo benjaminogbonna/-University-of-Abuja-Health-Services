@@ -26,7 +26,8 @@
 					<div class="col-12">
 						<button class="default-btn btn-two" type="submit">
 							Save changes
-						</button>
+						</button><br/>
+						<a style="color:red;" href="{% url 'blog:delete_post' post.slug post.id %}">Delete Post</a>
 					</div>
 				</div>
 			</form>

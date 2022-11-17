@@ -100,9 +100,15 @@
 						<nav class="navbar navbar-expand-md">
 							<div class="container">
 								{% if request.user.is_authenticated %}
-									<a class="navbar-brand" href="{% url 'patient:profile' %}">
-										<img src="{% static 'images/logo.jpg' %}" alt="Logo">
-									</a>
+									{% if request.user.doctor %}
+										<a class="navbar-brand" href="{% url 'doctor:profile' %}">
+											<img src="{% static 'images/logo.jpg' %}" alt="Logo">
+										</a>
+									{% else %}
+										<a class="navbar-brand" href="{% url 'patient:profile' %}">
+											<img src="{% static 'images/logo.jpg' %}" alt="Logo">
+										</a>
+									{% endif %}
 								{% else %}
 									<a class="navbar-brand" href="{% url 'main:index' %}">
 										<img src="{% static 'images/logo.jpg' %}" alt="Logo">
@@ -194,9 +200,15 @@
 					<!-- Menu For Mobile Device -->
 					<div class="mobile-nav">
 						{% if request.user.is_authenticated %}
-							<a href="{% url 'patient:profile' %}" class="logo">
-								<img src="{% static 'images/logo.jpg' %}" alt="Logo" width="50%">
-							</a>
+							{% if request.user.doctor %}
+								<a href="{% url 'doctor:profile' %}" class="logo">
+									<img src="{% static 'images/logo.jpg' %}" alt="Logo" width="50%">
+								</a>
+							{% else %}
+								<a href="{% url 'patient:profile' %}" class="logo">
+									<img src="{% static 'images/logo.jpg' %}" alt="Logo" width="50%">
+								</a>
+							{% endif %}
 						{% else %}
 							<a href="{% url 'main:index' %}" class="logo">
 								<img src="{% static 'images/logo.jpg' %}" alt="Logo" width="50%">
