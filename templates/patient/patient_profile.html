@@ -17,7 +17,7 @@
                                 <li>Email <span>{{ user.email }}</span></li>
 								<li>Card number <span>{{ user.patient.card_number }}</span></li>
                             </ul>
-                            <a href="#" class="default-btn page-btn">
+                            <a href="{% url 'main:password_change' %}" class="default-btn page-btn">
                                 Change password
                             </a>
                         </div>

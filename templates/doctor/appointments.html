@@ -6,7 +6,9 @@
 <section class="cart-area ptb-100">
     <div class="container">
         <div class="row">
+
             <center>
+                <h2>Appointments</h2>
                 {% include "main/_message.html" %}
             </center>
             <div class="col-lg-12 col-md-12">
@@ -78,13 +80,7 @@
                     {% else %}
                         <center>
                             <h3>You don't have any appointment</h3>
-                            <p>
-                                <a href="{% url 'patient:book_appointment' %}">
-                                    <button type="button" class="default-btn btn-small" style="height:50px">
-                                        Save Appointment
-                                    </button>
-                                </a>
-                            </p>
+
                         </center>
                     {% endif %}
                 </div>
