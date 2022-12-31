@@ -1,10 +1,7 @@
-# Folome
+# University of Abuja Health Services App
 
 ## General Information
-Folome is an app that helps to cater for the needs of visually impaired persons or other affected persons
-who might need help. Family or friends of the VIP (those getting help) creates an account for them on folome and update their account as VIP
-and creates another account on their own devices, update their account as Helper (both have different features). Then from the VIP's device/account, they can add/send invite to as many
-helpers as they want (typically those within the family and friends circle) who will track and give assistance to the VIP.
+
 
 
 ## Installation
